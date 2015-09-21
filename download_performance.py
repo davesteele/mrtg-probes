@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import os
-import requests
 import sys
 import datetime
 import fcntl
@@ -41,8 +40,10 @@ def calc_bw(url, bps):
     """Download url and return bytes per second"""
 
     start = datetime.datetime.now()
-    r = requests.get(url)
-    bytes = len(r.text)
+    cmd = "/usr/bin/wget -qO - %s &> /dev/null" % url
+    p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+    (out, err) = p.communicate()
+    bytes = len(out)
     duration = datetime.datetime.now() - start
 
     rate = bytes / duration.total_seconds()

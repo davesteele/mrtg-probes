@@ -46,5 +46,3 @@ Example MRTG configuration file, for monitoring download performance from 'otto'
     LegendO[otto_bw]: 24 Hr min
     LegendI[otto_bw]: 1 Hr performance
     Options[otto_bw]: growright, noinfo, gauge
-
-Note that _download_performance.py_ requires the python-requests package.

@@ -7,6 +7,8 @@ collection scripts for plotting different metrics.
 
 ### download_performance.py
 
+![Image](https://raw.githubusercontent.com/davesteele/mrtg-probes/master/images/dlperf.png)
+
 Plot '1 hour' and '24 hour' download performance numbers from a specific site,
 specified by URL. It uses a file lock to prevent parallel download tests.
 
